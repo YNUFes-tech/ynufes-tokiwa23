@@ -109,20 +109,5 @@ onMounted(() => {
     </div>
 </template>
 
-<style scoped lang="scss">
-.page-title {
-  position: relative;
-
-  > p {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 3em;
-    font-weight: bold;
-    color: #444455;
-  }
-}
+<style scoped>
 </style>
-
