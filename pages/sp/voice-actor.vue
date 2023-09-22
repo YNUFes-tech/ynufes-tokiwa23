@@ -89,6 +89,7 @@ definePageMeta({
       />
     </div>
     <div class="spacer"></div>
+      <DarkButton @click="useRouter().push('/')" text="⇐ ホームに戻る"/>
   </div>
 </template>
 
@@ -192,5 +193,15 @@ definePageMeta({
 }
 .spacer {
   height: 10vh;
+}
+
+.dark-button {
+  margin: 1em auto;
+  cursor: pointer;
+}
+
+.disabled-button {
+  outline: 1px solid #ffffff;
+  color: #FFFFFF;
 }
 </style>
