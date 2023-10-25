@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import events from "~/assets/data/events.json";
-
+const loader = await useDataLoader();
+const events = loader.events_data;
 useHead({
   title: "企画団体紹介ページ",
   meta: [
