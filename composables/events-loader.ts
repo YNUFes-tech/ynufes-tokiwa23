@@ -10,7 +10,10 @@ export async function useDataLoader() {
   events_data = await (async function (): Promise<EventData[]> {
     const downloaded_data: EventData[] = [];
     try {
-      const zip_data = await fetch(zipUrl).then((res) => res.blob());
+      // disable CORS
+      const zip_data = await fetch(zipUrl, {
+        mode: "no-cors",
+      }).then((res) => res.arrayBuffer());
       const zip = await JSZip.loadAsync(zip_data);
       const fileNames = Object.keys(zip.files);
 
