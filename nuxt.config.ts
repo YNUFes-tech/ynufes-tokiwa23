@@ -32,4 +32,9 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    public: {
+      eventsZipURL: process.env.EVENTS_ZIP_URL,
+    },
+  },
 });

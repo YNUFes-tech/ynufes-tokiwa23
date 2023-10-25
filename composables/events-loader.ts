@@ -5,13 +5,12 @@ import { EventData } from "~/model/eventData";
 let events_data: EventData[] = [];
 
 export async function useDataLoader() {
+  const zipUrl = useRuntimeConfig().public.eventsZipURL as string;
   if (events_data.length > 0) return { events_data };
   events_data = await (async function (): Promise<EventData[]> {
     const downloaded_data: EventData[] = [];
     try {
-      const zip_data = await fetch("/data/events.zip").then((res) =>
-        res.blob(),
-      );
+      const zip_data = await fetch(zipUrl).then((res) => res.blob());
       const zip = await JSZip.loadAsync(zip_data);
       const fileNames = Object.keys(zip.files);
 

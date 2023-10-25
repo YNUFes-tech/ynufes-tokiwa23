@@ -32,9 +32,9 @@ jobs:
             echo "BASE_URL=/stg/23/tokiwa/" >> .env
           fi
         # switch service name to configure deployment target appropriately
-      - name: Download events.json from external URL
+      - name: Configure events data url
         run: |
-          curl "${{ secrets.EVENTS_DATA_URL }}" -o ./public/data/events.zip
+          echo "EVENTS_ZIP_URL=${{ secrets.EVENTS_DATA_URL }}" >> .env
       - name: yarn install
         run: yarn install
       - name: yarn build
