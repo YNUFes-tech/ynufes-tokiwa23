@@ -276,8 +276,8 @@ useHead({
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 30px;
-  margin: 0 auto;
+  gap: 60px 30px;
+  margin: 60px auto;
   padding: 0 1em;
   box-sizing: border-box;
   animation: fade-in-from-right 1s ease-in-out;
